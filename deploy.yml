@@ -1,0 +1,23 @@
+name: Deploy and Confirm
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [deployment-trigger]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        run: npm run deploy
+      - name: Confirm in Release Hub
+        if: success()
+        run: |
+          curl -sf -X POST "$RELEASE_HUB_URL" \
+            -H "Content-Type: application/json" \
+            -H "X-Api-Key: $RELEASE_HUB_API_KEY" \
+            -d "{\"module\":\"test-api\",\"environment\":\"PROD\",\"sha\":\"$GITHUB_SHA\"}"
+        env:
+          RELEASE_HUB_URL: ${{ secrets.RELEASE_HUB_URL }}
+          RELEASE_HUB_API_KEY: ${{ secrets.RELEASE_HUB_API_KEY }}
