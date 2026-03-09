@@ -1,0 +1,11 @@
+{
+  "name": "release-hub-test-module",
+  "version": "1.0.0",
+  "description": "Test module for Release Hub deployment testing",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Tests passed\" && exit 0",
+    "deploy": "echo \"Deploying...\" && exit 0"
+  }
+}
