@@ -11,7 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.client_payload.sha }}
+          fetch-depth: 0
+
+      - name: Checkout specific SHA
+        if: ${{ github.event.client_payload.sha != '' }}
+        run: git checkout ${{ github.event.client_payload.sha }}
 
       - name: Deploy info
         run: |
@@ -19,6 +23,7 @@ jobs:
           echo "Module: ${{ github.event.client_payload.module }}"
           echo "SHA: ${{ github.event.client_payload.sha }}"
           echo "Installation ID: ${{ github.event.client_payload.installation_id }}"
+          echo "Current commit: $(git rev-parse HEAD)"
 
       - name: Simulate deployment
         run: |
