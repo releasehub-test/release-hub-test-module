@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy info
         run: |
-          echo "🚀 Deploying to ${{ github.event.client_payload.environment }}"
+          echo "Deploying to ${{ github.event.client_payload.environment }}"
           echo "Module: ${{ github.event.client_payload.module }}"
           echo "SHA: ${{ github.event.client_payload.sha }}"
           echo "Installation ID: ${{ github.event.client_payload.installation_id }}"
@@ -33,11 +33,16 @@ jobs:
 
       - name: Callback to Release Hub
         if: ${{ github.event.client_payload.callback_url != '' }}
+        env:
+          CALLBACK_URL: ${{ github.event.client_payload.callback_url }}
+          CALLBACK_TOKEN: ${{ github.event.client_payload.callback_token }}
+          INSTALLATION_ID: ${{ github.event.client_payload.installation_id }}
         run: |
-          curl -X POST "${{ github.event.client_payload.callback_url }}" \
+          curl -X POST "$CALLBACK_URL" \
             -H "Content-Type: application/json" \
-            -H "X-API-Key: ${{ github.event.client_payload.callback_token }}" \
-            -d '{
-              "status": "SUCCESS",
-              "message": "Deployment completed successfully via GitHub Actions"
-            }'
+            -H "X-API-Key: $CALLBACK_TOKEN" \
+            -d "{
+              \"installationId\": \"$INSTALLATION_ID\",
+              \"status\": \"success\",
+              \"message\": \"Deployment completed successfully via GitHub Actions\"
+            }"
