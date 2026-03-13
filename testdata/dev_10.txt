@@ -1,0 +1,3 @@
+DEV-10 Jako admin chcę definiować wielopoziomowe uprawnienia
+Generated: 2026-03-13T17:14:45.898Z
+Release: AutoRel-001
