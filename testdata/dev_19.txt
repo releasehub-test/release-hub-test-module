@@ -1,0 +1,3 @@
+DEV-19 Jako klient chcę śledzić przesyłkę na mapie w czasie rzeczywistym
+Generated: 2026-03-13T17:15:00.279Z
+Release: AutoRel-001
