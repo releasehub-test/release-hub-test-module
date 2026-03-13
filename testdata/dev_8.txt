@@ -1,0 +1,3 @@
+DEV-8 Dodanie health-check endpointów
+Generated: 2026-03-13T17:14:42.492Z
+Release: AutoRel-001
