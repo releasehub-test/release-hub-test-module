@@ -1,0 +1,3 @@
+DEV-11 Dodanie kompresji odpowiedzi HTTP
+Generated: 2026-03-13T17:14:47.466Z
+Release: AutoRel-001
