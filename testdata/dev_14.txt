@@ -1,0 +1,3 @@
+DEV-14 Jako manager chcę integrować się z kalendarzem Google/Outlook
+Generated: 2026-03-13T17:14:52.123Z
+Release: AutoRel-001
