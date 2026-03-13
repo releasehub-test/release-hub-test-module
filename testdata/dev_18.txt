@@ -1,0 +1,3 @@
+DEV-18 Bug: Brak obsługi concurrent modification w edycji dokumentu
+Generated: 2026-03-13T17:14:58.666Z
+Release: AutoRel-001
