@@ -1,0 +1,3 @@
+DEV-28 Bug: Błędne obliczanie rabatu przy zamówieniach grupowych
+Generated: 2026-03-13T17:29:52.603Z
+Release: AutoRel-003
