@@ -1,0 +1,3 @@
+DEV-9 Aktualizacja zależności Spring Boot do 3.x
+Generated: 2026-03-13T17:14:44.063Z
+Release: AutoRel-001
