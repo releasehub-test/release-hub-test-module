@@ -1,0 +1,3 @@
+DEV-30 Jako klient chcę porównywać produkty obok siebie
+Generated: 2026-03-13T17:29:55.725Z
+Release: AutoRel-003
