@@ -1,0 +1,3 @@
+DEV-15 Bug: Niepoprawne kodowanie znaków UTF-8 w eksporcie CSV
+Generated: 2026-03-13T17:14:53.749Z
+Release: AutoRel-001
