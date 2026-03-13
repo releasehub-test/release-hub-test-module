@@ -1,0 +1,3 @@
+DEV-33 Integracja z systemem kolejek RabbitMQ
+Generated: 2026-03-13T22:13:09.868Z
+Release: AutoRel-004
